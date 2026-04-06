@@ -1,15 +1,28 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "effortLevel": "medium",
   "model": "opus[1m]",
-  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Read",
+      "WebFetch",
+      "WebSearch",
+      "Write",
+      "mcp__*"
+    ],
+    "deny": [
+      "Bash(git push --force *)",
+      "Bash(git push --no-verify)",
+      "Bash(rm -rf /)",
+      "Bash(rm -rf /*)"
+    ]
+  },
   "statusLine": {
-    "type": "command",
-    "command": "bash ~/.claude-shared/statusline-command.sh"
-  },
-  "enabledPlugins": {
-    "pyright-lsp@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true
-  },
-  "effortLevel": "medium"
+    "command": "bash ~/.claude-shared/statusline-command.sh",
+    "type": "command"
+  }
 }
