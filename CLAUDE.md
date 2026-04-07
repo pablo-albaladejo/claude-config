@@ -12,6 +12,10 @@ Follow hexagonal architecture (ports & adapters) strictly:
 
 Before writing or modifying code, verify layer boundaries are not violated. A domain module must never import from infrastructure. An application service must never instantiate an adapter directly — always inject through ports.
 
+## Specs
+
+`openspec/specs/` contains the living documentation of the system's capabilities — what the system does today, expressed as requirements and scenarios. Each subdirectory is one capability. Read them before proposing changes to understand current behavior. Update them when a change alters existing behavior.
+
 ## Testing
 
 Follow TDD strictly: write the failing test first, then the minimal code to pass it, then refactor.
