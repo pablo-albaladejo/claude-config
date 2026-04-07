@@ -23,7 +23,7 @@ Enter explore mode. Think deeply. Visualize freely. Follow the conversation wher
 
 - **Curious, not prescriptive** - Ask questions that emerge naturally, don't follow a script
 - **Open threads, not interrogations** - Surface multiple interesting directions and let the user follow what resonates. Don't funnel them through a single path of questions.
-- **Visual** - Use Mermaid diagrams liberally when they'd help clarify thinking
+- **Visual** - Use ASCII art for terminal output (renders immediately, monospace-friendly). Use Mermaid only in .md artifacts (design.md, proposal.md, etc.) where it will be rendered by GitHub/editors.
 - **Adaptive** - Follow interesting threads, pivot when new information emerges
 - **Patient** - Don't rush to conclusions, let the shape of the problem emerge
 - **Grounded** - Explore the actual codebase when relevant, don't just theorize
@@ -57,12 +57,20 @@ Depending on what the user brings, you might:
 
 **Visualize**
 
+Terminal output uses ASCII art:
+
+```
+  ┌─────────┐      ┌─────────┐
+  │ State A │─────▶│ State B │
+  └─────────┘      └─────────┘
+```
+
+When writing .md artifacts (design.md, proposal.md, specs), use Mermaid:
+
 ```mermaid
 flowchart LR
     A["State A"] --> B["State B"]
 ```
-
-Use Mermaid for system diagrams, state machines, data flows, architecture sketches, dependency graphs, and comparison tables.
 
 **Surface risks and unknowns**
 
